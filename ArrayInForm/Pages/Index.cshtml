@@ -1,0 +1,22 @@
+﻿@page
+@model ArrayInForm.IndexModel
+@{
+    ViewData["Title"] = "Vytvoření tabulky";
+}
+
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Input.Width"></label>
+            <input type="number" asp-for="Input.Width" class="form-control" />
+            <span asp-validation-for="Input.Width" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Input.Height"></label>
+            <input type="number" asp-for="Input.Height" class="form-control" />
+            <span asp-validation-for="Input.Height" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Vytvořit</button>
+        </div>
+    </form>

@@ -1,0 +1,25 @@
+﻿@page
+@model ArrayInForm.DataModel
+@{
+    ViewData["Title"] = "Data";
+}
+
+<h1>Data</h1>
+<form method="post" asp-page="./Result">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <table class="table">
+        @for (var i = 0; i < Model.Input.Data.Count; i++)
+        {
+            <tr>
+                @for (var j = 0; j < Model.Input.Data[i].Count; j++)
+                {
+                    <td><input class="form-control" type="number" asp-for="Input.Data[i][j]" /></td>
+                }
+            </tr>
+        }
+    </table>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Zpracovat</button>
+    </div>
+</form>
+

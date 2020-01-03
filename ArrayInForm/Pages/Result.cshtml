@@ -1,0 +1,26 @@
+﻿@page
+@model ArrayInForm.ResultModel
+@{
+    ViewData["Title"] = "Result";
+}
+
+<h1>Result</h1>
+<table class="table table-bordered table-hover">
+    <tbody>
+        @foreach (var row in @Model.Input.Data)
+        {
+            <tr>
+                @foreach (var cell in row)
+                {
+                    <td>@cell</td>
+                }
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="9999">Total: @Model.Sum</th>
+        </tr>
+    </tfoot>
+</table>
+<div><a class="btn btn-primary" asp-page="./Index">Restart</a></div>
